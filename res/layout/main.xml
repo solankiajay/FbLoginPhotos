@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Copyright (c) 2014-present, Facebook, Inc. All rights reserved.
+
+    You are hereby granted a non-exclusive, worldwide, royalty-free license to use,
+    copy, modify, and distribute this software in source code or binary form for use
+    in connection with the web services and APIs provided by Facebook.
+
+    As with any software that integrates with the Facebook platform, your use of
+    this software is subject to the Facebook Developer Principles and Policies
+    [http://developers.facebook.com/policy/]. This copyright notice shall be
+    included in all copies or substantial portions of the software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+    FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+    COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+    IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+    CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+-->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:facebook="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#FFF"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/main_ui_container"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#FFF"
+        android:orientation="vertical" >
+
+        <com.facebook.login.widget.LoginButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="5dp"
+            facebook:confirm_logout="false"
+            facebook:tooltip_mode="never_display" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center_horizontal"
+            >
+
+            <Button
+                android:id="@+id/btn_loadPhoto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="5dp"
+                android:text="Load Photos"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/btn_loadMorePhoto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="5dp"
+                android:text="Load More Photos"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_profile"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/greeting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:textColor="#333"
+                android:textSize="18sp" />
+
+            <com.facebook.login.widget.ProfilePictureView
+                android:id="@+id/profilePicture"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:gravity="center_horizontal"
+                facebook:preset_size="normal" />
+
+            <Button
+                android:id="@+id/postStatusUpdateButton"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Post Status Update"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/postPhotoButton"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Post Photo"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <GridView
+            android:id="@+id/gridphoto"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:columnWidth="80dp"
+            android:gravity="center"
+            android:horizontalSpacing="2dp"
+            android:numColumns="auto_fit"
+            android:stretchMode="columnWidth"
+            android:verticalSpacing="2dp" />
+
+        <LinearLayout
+            android:id="@+id/linlaProgressBar"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ll_profile"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <ProgressBar
+                android:id="@+id/load"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:indeterminateDrawable="@drawable/my_progress"
+                android:indeterminateOnly="true"
+                android:padding="2dp"
+                android:visibility="gone" />
+            <!-- style="@android:style/Widget.ProgressBar.Small.Inverse" -->
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linlaProgressBar2"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/linlaProgressBar"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <ProgressBar
+                android:id="@+id/load2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:indeterminateDrawable="@drawable/my_progress"
+                android:indeterminateOnly="true"
+                android:padding="2dp"
+                android:visibility="gone" />
+            <!-- style="@android:style/Widget.ProgressBar.Small.Inverse" -->
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
